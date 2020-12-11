@@ -1,0 +1,52 @@
+﻿<Window x:Class="ProjetEDF.AdminWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ProjetEDF"
+        mc:Ignorable="d"
+        Title="AdminWindow" Height="450" Width="800" Loaded="Window_Loaded">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition Height="50"></RowDefinition>
+            <RowDefinition Height="50"></RowDefinition>
+            <RowDefinition Height="40"></RowDefinition>
+        </Grid.RowDefinitions>
+        <TextBlock Text="Gestion EDF" HorizontalAlignment="Center" Grid.ColumnSpan="4" FontSize="35"/>
+        <TextBlock Text="Liste des contrôleurs" VerticalAlignment="Bottom" FontSize="20"/>
+        <TextBlock Text="Liste des clients" VerticalAlignment="Bottom" Grid.Column="2" FontSize="20"/>
+
+        <ListBox Name="lstControleurs" SelectionChanged="lstControleurs_SelectionChanged" Grid.Row="1" Grid.ColumnSpan="2">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Text="{Binding id}" Width="15"/>
+                        <TextBlock Text="{Binding nom}"/>
+                    </StackPanel>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+        <ListBox Name="lstClients" Grid.Row="1" Grid.Column="2" Grid.ColumnSpan="2">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Text="{Binding identifiant}" Width="15"/>
+                        <TextBlock Text="{Binding nom}" Width="80"/>
+                        <TextBlock Text="{Binding prenom}" Width="80"/>
+                        <TextBlock Text="{Binding ancienReleve}" Width="80"/>
+                        <TextBlock Text="{Binding dernierReleve}" Width="80"/>
+                        <TextBlock Text="{Binding different}" Width="80"/>
+                    </StackPanel>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+    </Grid>
+</Window>

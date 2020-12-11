@@ -1,0 +1,34 @@
+﻿<Window x:Class="ProjetEDF.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ProjetEDF"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800" Loaded="Window_Loaded">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition Height="30"></RowDefinition>
+            <RowDefinition></RowDefinition>
+        </Grid.RowDefinitions>
+        <TextBlock Text="Authentification" FontSize="30"/>
+        <TextBlock Text="Veuiller saisir login et mdp" FontSize="20" VerticalAlignment="Center"/>
+        <TextBlock Text="Login : " Grid.Row="1" HorizontalAlignment="Right" VerticalAlignment="Center" FontSize="20"/>
+        <TextBlock Text="Mot de passe : " Grid.Row="2" HorizontalAlignment="Right" VerticalAlignment="Center" FontSize="20"/>
+        <TextBox x:Name="txtlogin" Grid.Row="1" Grid.Column="1"></TextBox>
+        <TextBox x:Name="txtMdp" Grid.Row="2" Grid.Column="1"></TextBox>
+        <TextBlock x:Name="txtErreur" Text="" Grid.Column="0" Grid.Row="4" Grid.ColumnSpan="3" 
+                   VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="18"></TextBlock>
+
+        <Button Name="btnLogin" Content="Login" FontSize="18" Grid.Column="1" Grid.Row="3" Click="btnLogin_Click"></Button>
+        
+    </Grid>
+</Window>
